@@ -1,4 +1,5 @@
 function updateTemperature(response) {
+  let city = response.data.city;
   let temperature = Math.round(response.data.temperature.current);
   let description = response.data.condition.description;
   let humidity = response.data.temperature.humidity;
@@ -15,7 +16,7 @@ function updateTemperature(response) {
 
   console.log(response);
 
-  cityElement.innerHTML = response.data.city;
+  cityElement.innerHTML = city;
   temperatureElement.innerHTML = temperature;
   descriptionElement.innerHTML = description;
   humidityElement.innerHTML = humidity;
