@@ -23,6 +23,8 @@ function updateTemperature(response) {
   windSpeedElement.innerHTML = windSpeed;
   timeElement.innerHTML = formatDate(date);
   iconImage.innerHTML = icon;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -57,6 +59,17 @@ function searchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
 
   searchCity(searchInput.value);
+}
+
+function getForecast(city) {
+  let apiKey = "ab7t243ba2b8a25f4fb421dc30o50328";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiURL).then(displayForecast);
+  console.log(apiURL);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
 }
 
 let searchFormElement = document.querySelector("#search-form");
