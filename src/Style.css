@@ -94,7 +94,7 @@ main {
 
 .weather-forecast {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 30px;
 }
 
@@ -106,10 +106,9 @@ main {
 }
 
 .weather-forecast-icon {
-  font-size: 48px;
-  text-align: center;
+  width: 100%;
   margin-bottom: 10px;
-  color: #6c5b7c;
+  padding: 5px;
 }
 
 .weather-forecast-temperatures {
